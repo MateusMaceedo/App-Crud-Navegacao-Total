@@ -2,12 +2,10 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.ProdutoDAO;
 import VO.Produto;
 
@@ -18,7 +16,7 @@ public class Cadastro extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
-     * Default constructor. 
+     * Default constructor.
      */
     public Cadastro() {
         // TODO Auto-generated constructor stub
@@ -42,7 +40,7 @@ public class Cadastro extends HttpServlet {
 		Produto p= new Produto();
 		String msg="";
 		p.setMarca(marca);
-		p.setNome(nome);		
+		p.setNome(nome);
 		ProdutoDAO dao = new ProdutoDAO();
 		if(codigo=="" || codigo==null) {
 			msg="Produto Incluído com Sucesso";
@@ -52,9 +50,7 @@ public class Cadastro extends HttpServlet {
 			p.setCodigo(Integer.parseInt(codigo));
 			dao.editProduto(p);
 		}
-		request.setAttribute("msg", msg);	
-		request.getRequestDispatcher("/Produto/Index.jsp").forward(request, response);
-		
+		request.setAttribute("msg", msg);
+		request.getRequestDispatcher("/Produto/Index.jsp").forward(request, respons);
 	}
-
 }

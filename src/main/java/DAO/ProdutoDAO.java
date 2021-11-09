@@ -1,10 +1,10 @@
 package DAO;
 import java.util.ArrayList;
-
 import VO.Produto;
+
 public class ProdutoDAO {
 	public ArrayList<Produto> getProdutos(){
-			
+
 		ArrayList <Produto> lst = new ArrayList();
 		Produto p= new Produto();
 		p.setCodigo(0);
@@ -29,26 +29,26 @@ public class ProdutoDAO {
 		return lst;
 	}
 	public ArrayList<Produto> findProdutos(String nome){
-		
+
 		ArrayList <Produto> lst = new ArrayList();
 		Produto p= new Produto();
 		p.setCodigo(0);
 		p.setNome("Teste 1");
 		p.setMarca("Sansung");
-		lst.add(p);		
+		lst.add(p);
 		return lst;
 	}
 	public void newProduto(Produto p){
-		
-		
+
+
 	}
 	public void editProduto(Produto p){
-		
-		
+
+
 	}
 	public void deleteProduto(Produto p){
-		
-		
+
+
 	}
 	public Produto findByIdProduto(int id){
 		Produto p = new Produto();

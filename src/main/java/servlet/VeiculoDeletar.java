@@ -1,15 +1,11 @@
 package servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
 import DAO.VeiculoDAO;
-
 import VO.Veiculo;
 
 /**
@@ -17,7 +13,7 @@ import VO.Veiculo;
  */
 public class VeiculoDeletar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -37,7 +33,7 @@ public class VeiculoDeletar extends HttpServlet {
 		dao.deleteVeiculo(p);
 		String msg="";
 		msg="Veiculo Excluido com Sucesso";
-		request.setAttribute("msg", msg);	
+		request.setAttribute("msg", msg);
 		request.getRequestDispatcher("/Veiculo/Index.jsp").forward(request, response);
 	}
 
@@ -48,5 +44,4 @@ public class VeiculoDeletar extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

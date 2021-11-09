@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +13,7 @@ import VO.Veiculo;
  */
 public class VeiculoGravar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -43,9 +42,9 @@ public class VeiculoGravar extends HttpServlet {
 		String msg="";
 		//p.setCodigo(codigo);
 		p.setMarca(marca);
-		p.setNome(nome);	
-		
-		
+		p.setNome(nome);
+
+
 		VeiculoDAO dao = new VeiculoDAO();
 		if(codigo=="" || codigo==null) {
 			msg="Veiculo Incluído com Sucesso";
@@ -55,8 +54,7 @@ public class VeiculoGravar extends HttpServlet {
 			p.setCodigo(Integer.parseInt(codigo));
 			dao.editVeiculo(p);
 		}
-		request.setAttribute("msg", msg);	
+		request.setAttribute("msg", msg);
 		request.getRequestDispatcher("/Veiculo/Index.jsp").forward(request, response);
 	}
-
 }

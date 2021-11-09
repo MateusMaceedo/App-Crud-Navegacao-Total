@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.ServicoDAO;
 import VO.Servico;
 
@@ -14,7 +13,7 @@ import VO.Servico;
  */
 public class ServicoEditar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,9 +31,9 @@ public class ServicoEditar extends HttpServlet {
 		Servico p = new Servico();
 		ServicoDAO dao = new ServicoDAO();
 		p=dao.findByIdServico(Integer.parseInt(codigo));
-		request.setAttribute("servico", p);	
-		request.setAttribute("codigo", codigo);	
-		
+		request.setAttribute("servico", p);
+		request.setAttribute("codigo", codigo);
+
 		request.getRequestDispatcher("/Servico/New.jsp").forward(request, response);
 	}
 
@@ -45,5 +44,4 @@ public class ServicoEditar extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

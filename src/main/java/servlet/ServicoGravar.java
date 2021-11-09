@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.ServicoDAO;
 import VO.Servico;
 
@@ -14,7 +13,7 @@ import VO.Servico;
  */
 public class ServicoGravar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -44,10 +43,10 @@ public class ServicoGravar extends HttpServlet {
 		String msg="";
 		//p.setCodigo(codigo);
 		p.setData(data);
-		p.setDescricao(descricao);	
+		p.setDescricao(descricao);
 		p.setProfissional(profissional);
-		
-		
+
+
 		ServicoDAO dao = new ServicoDAO();
 		if(codigo=="" || codigo==null) {
 			msg="Servico Incluído com Sucesso";
@@ -57,8 +56,7 @@ public class ServicoGravar extends HttpServlet {
 			p.setCodigo(Integer.parseInt(codigo));
 			dao.editServico(p);
 		}
-		request.setAttribute("msg", msg);	
+		request.setAttribute("msg", msg);
 		request.getRequestDispatcher("/Veiculo/Index.jsp").forward(request, response);
 	}
-
 }

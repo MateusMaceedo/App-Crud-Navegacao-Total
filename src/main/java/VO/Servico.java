@@ -5,7 +5,7 @@ public class Servico {
 	private String descricao;
 	private String data;
 	private String profissional;
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -30,5 +30,4 @@ public class Servico {
 	public void setProfissional(String profissional) {
 		this.profissional = profissional;
 	}
-
 }

@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.ProdutoDAO;
 import VO.Produto;
 
@@ -14,7 +13,7 @@ import VO.Produto;
  */
 public class DeletarCadastro extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -34,9 +33,9 @@ public class DeletarCadastro extends HttpServlet {
 		dao.deleteProduto(p);
 		String msg="";
 		msg="Produto Excluido com Sucesso";
-		request.setAttribute("msg", msg);	
+		request.setAttribute("msg", msg);
 		request.getRequestDispatcher("/Produto/Index.jsp").forward(request, response);
-	
+
 	}
 
 	/**
@@ -46,5 +45,4 @@ public class DeletarCadastro extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.ServicoDAO;
 
 /**
@@ -13,7 +12,7 @@ import DAO.ServicoDAO;
  */
 public class ServicoListar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -28,15 +27,15 @@ public class ServicoListar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		ServicoDAO s = new ServicoDAO();
-		
+
 		String nome=request.getParameter("descricao");
-		
+
 		if(nome=="" || nome==null ) {
-			request.setAttribute("lista", s.getServicos());	
+			request.setAttribute("lista", s.getServicos());
 		}else {
-			request.setAttribute("lista", s.findServico(nome));	
+			request.setAttribute("lista", s.findServico(nome));
 		}
-	
+
 		request.getRequestDispatcher("/Servico/Index.jsp").forward(request, response);
 	}
 
@@ -48,5 +47,4 @@ public class ServicoListar extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

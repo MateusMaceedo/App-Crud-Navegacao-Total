@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.ProdutoDAO;
 import VO.Produto;
 
@@ -14,7 +13,7 @@ import VO.Produto;
  */
 public class EditarCadastro extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,8 +31,8 @@ public class EditarCadastro extends HttpServlet {
 		Produto p = new Produto();
 		ProdutoDAO dao = new ProdutoDAO();
 		p=dao.findByIdProduto(Integer.parseInt(codigo));
-		request.setAttribute("produto", p);	
-		request.setAttribute("codigo", codigo);	
+		request.setAttribute("produto", p);
+		request.setAttribute("codigo", codigo);
 		request.getRequestDispatcher("/Produto/New.jsp").forward(request, response);
 	}
 
@@ -44,5 +43,4 @@ public class EditarCadastro extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

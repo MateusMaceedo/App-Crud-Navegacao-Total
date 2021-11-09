@@ -1,11 +1,11 @@
 package VO;
 
 public class Veiculo {
-	
+
 	private int codigo;
 	private String nome;
 	private String marca;
-	
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -24,5 +24,4 @@ public class Veiculo {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	
 }

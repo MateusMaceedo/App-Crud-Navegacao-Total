@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.CategoriaDAO;
 import VO.Categoria;
 
@@ -14,7 +13,7 @@ import VO.Categoria;
  */
 public class CategoriaEditar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,8 +31,8 @@ public class CategoriaEditar extends HttpServlet {
 		Categoria p = new Categoria();
 		CategoriaDAO dao = new CategoriaDAO();
 		p=dao.findByIdCategoria(Integer.parseInt(codigo));
-		request.setAttribute("categoria", p);	
-		request.setAttribute("codigo", codigo);	
+		request.setAttribute("categoria", p);
+		request.setAttribute("codigo", codigo);
 		request.getRequestDispatcher("/Categoria/New.jsp").forward(request, response);
 	}
 
@@ -44,5 +43,4 @@ public class CategoriaEditar extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

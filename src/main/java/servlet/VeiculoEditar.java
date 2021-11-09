@@ -1,13 +1,11 @@
 package servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import DAO.VeiculoDAO;
-
 import VO.Veiculo;
 
 /**
@@ -15,7 +13,7 @@ import VO.Veiculo;
  */
 public class VeiculoEditar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,9 +31,9 @@ public class VeiculoEditar extends HttpServlet {
 		Veiculo p = new Veiculo();
 		VeiculoDAO dao = new VeiculoDAO();
 		p=dao.findByIdVeiculo(Integer.parseInt(codigo));
-		request.setAttribute("veiculo", p);	
-		request.setAttribute("codigo", codigo);	
-		
+		request.setAttribute("veiculo", p);
+		request.setAttribute("codigo", codigo);
+
 		request.getRequestDispatcher("/Veiculo/New.jsp").forward(request, response);
 	}
 
@@ -46,5 +44,4 @@ public class VeiculoEditar extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

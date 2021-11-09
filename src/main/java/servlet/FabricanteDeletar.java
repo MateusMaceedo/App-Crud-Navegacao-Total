@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.FabricanteDAO;
 import VO.Fabricante;
 
@@ -14,7 +13,7 @@ import VO.Fabricante;
  */
 public class FabricanteDeletar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -35,7 +34,7 @@ public class FabricanteDeletar extends HttpServlet {
 		dao.deleteFabricante(p);
 		String msg="";
 		msg="Fabricante Excluido com Sucesso";
-		request.setAttribute("msg", msg);	
+		request.setAttribute("msg", msg);
 		request.getRequestDispatcher("/Fabricante/Index.jsp").forward(request, response);
 	}
 
@@ -46,5 +45,4 @@ public class FabricanteDeletar extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

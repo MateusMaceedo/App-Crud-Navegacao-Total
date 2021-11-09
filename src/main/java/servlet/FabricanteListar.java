@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.FabricanteDAO;
 
 /**
@@ -13,7 +12,7 @@ import DAO.FabricanteDAO;
  */
 public class FabricanteListar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -29,11 +28,11 @@ public class FabricanteListar extends HttpServlet {
 		FabricanteDAO p = new FabricanteDAO();
 		String nome=request.getParameter("nome");
 		if(nome=="" || nome==null ) {
-			request.setAttribute("lista", p.getFabricantes());	
+			request.setAttribute("lista", p.getFabricantes());
 		}else {
-			request.setAttribute("lista", p.findFabricantes(nome));	
+			request.setAttribute("lista", p.findFabricantes(nome));
 		}
-	
+
 		request.getRequestDispatcher("/Fabricante/Index.jsp").forward(request, response);
 	}
 
@@ -44,5 +43,4 @@ public class FabricanteListar extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

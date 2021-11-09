@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +12,7 @@ import DAO.VeiculoDAO;
  */
 public class VeiculoListar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -29,17 +28,17 @@ public class VeiculoListar extends HttpServlet {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 		VeiculoDAO s = new VeiculoDAO();
-		
+
 		String nome=request.getParameter("nome");
-		
+
 		if(nome=="" || nome==null ) {
-			request.setAttribute("lista", s.getVeiculos());	
+			request.setAttribute("lista", s.getVeiculos());
 		}else {
-			request.setAttribute("lista", s.findVeiculos(nome));	
+			request.setAttribute("lista", s.findVeiculos(nome));
 		}
-	
+
 		request.getRequestDispatcher("/Veiculo/Index.jsp").forward(request, response);
-	
+
 	}
 
 	/**
@@ -49,5 +48,4 @@ public class VeiculoListar extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

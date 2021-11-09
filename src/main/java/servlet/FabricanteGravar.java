@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.FabricanteDAO;
 import VO.Fabricante;
 
@@ -14,7 +13,7 @@ import VO.Fabricante;
  */
 public class FabricanteGravar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -39,7 +38,7 @@ public class FabricanteGravar extends HttpServlet {
 		String codigo = request.getParameter("codigo");
 		Fabricante p= new Fabricante();
 		String msg="";
-		p.setNome(nome);		
+		p.setNome(nome);
 		FabricanteDAO dao = new FabricanteDAO();
 		if(codigo=="" || codigo==null) {
 			msg="Fabricante Incluído com Sucesso";
@@ -49,8 +48,7 @@ public class FabricanteGravar extends HttpServlet {
 			p.setCodigo(Integer.parseInt(codigo));
 			dao.editFabricante(p);
 		}
-		request.setAttribute("msg", msg);	
+		request.setAttribute("msg", msg);
 		request.getRequestDispatcher("/Fabricante/Index.jsp").forward(request, response);
 	}
-
 }

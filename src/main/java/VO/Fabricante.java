@@ -3,7 +3,7 @@ package VO;
 public class Fabricante {
 	private int codigo;
 	private String nome;
-	
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -16,6 +16,4 @@ public class Fabricante {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
 }

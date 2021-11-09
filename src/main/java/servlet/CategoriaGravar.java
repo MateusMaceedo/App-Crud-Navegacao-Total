@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.CategoriaDAO;
 import VO.Categoria;
 
@@ -14,7 +13,7 @@ import VO.Categoria;
  */
 public class CategoriaGravar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -39,7 +38,7 @@ public class CategoriaGravar extends HttpServlet {
 		String codigo = request.getParameter("codigo");
 		Categoria p= new Categoria();
 		String msg="";
-		p.setNome(nome);		
+		p.setNome(nome);
 		CategoriaDAO dao = new CategoriaDAO();
 		if(codigo=="" || codigo==null) {
 			msg="Categoria Incluído com Sucesso";
@@ -49,8 +48,7 @@ public class CategoriaGravar extends HttpServlet {
 			p.setCodigo(Integer.parseInt(codigo));
 			dao.editCategoria(p);
 		}
-		request.setAttribute("msg", msg);	
+		request.setAttribute("msg", msg);
 		request.getRequestDispatcher("/Categoria/Index.jsp").forward(request, response);
 	}
-
 }

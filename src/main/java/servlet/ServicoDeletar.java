@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import DAO.ServicoDAO;
 import VO.Servico;
 
@@ -14,7 +13,7 @@ import VO.Servico;
  */
 public class ServicoDeletar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -34,7 +33,7 @@ public class ServicoDeletar extends HttpServlet {
 		dao.deleteServico(p);
 		String msg="";
 		msg="Servico Excluido com Sucesso";
-		request.setAttribute("msg", msg);	
+		request.setAttribute("msg", msg);
 		request.getRequestDispatcher("/Servico/Index.jsp").forward(request, response);
 	}
 
@@ -45,5 +44,4 @@ public class ServicoDeletar extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }
