@@ -51,6 +51,6 @@ public class Cadastro extends HttpServlet {
 			dao.editProduto(p);
 		}
 		request.setAttribute("msg", msg);
-		request.getRequestDispatcher("/Produto/Index.jsp").forward(request, respons);
+		request.getRequestDispatcher("/Produto/Index.jsp").forward(request, response);
 	}
 }

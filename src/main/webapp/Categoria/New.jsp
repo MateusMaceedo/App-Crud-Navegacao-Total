@@ -5,22 +5,30 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Categoria Salvar</title>
 </head>
 <body>
 <html>
-<head><title>Página Cadastro</title>
+<head><title>Pï¿½gina Cadastro</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="../../ProjetoCodo/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
-<form action="/PrimeiroApp/CategoriaGravar" method="post">
-	Nome: <input type="text" name="nome" id="nome" 
-	value="<c:out value = "${categoria.nome}"/>"  />
+<div class="container">
+<form action="/ProjetoCodo/CategoriaGravar" method="post">
+  <div class="mb-3">
+   Nome:</label>
+	 <input class="form-control" type="text" name="nome" id="nome"
+	value="<c:out value = "${categoria.nome}"/>" required />
+	</div>
 <br />
-	Codigo: <input type="text" name="codigo" value="<c:out value = "${categoria.codigo}"/>"  id="codigo" />
-	<input type="submit" value="Enviar"/>
-	<a href="/PrimeiroApp/CategoriaListar">Voltar</a>
+		<label class="form-label">Codigo: </label>
+		<input class="form-control" type="text" name="codigo" value="<c:out value = "${categoria.codigo}"/>"  id="codigo" required />
+
+	<br><input type="submit" class="btn btn-primary"  value="Enviar"/>
+	<a href="/ProjetoCodo/CategoriaListar" class="btn btn-warning">Voltar</a>
 </form>
+</div>
 </body>
 </html>

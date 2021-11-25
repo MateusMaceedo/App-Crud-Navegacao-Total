@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+body {
+background-color:rgb(255, 255, 255)	;
+
+}
+.nav-item:hover{
+background-color:	#F5FFFA;
+
+}
+.nav-link{
+	color: #000000;
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+
+	border-style: inset;
+}

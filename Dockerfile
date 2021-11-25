@@ -1,5 +1,6 @@
-FROM openjdk:11
-VOLUME /tmp
-EXPOSE 8080
-ADD ./target/make-magic-challenge-0.0.1-SNAPSHOT.jar nmakemagic.jar
-ENTRYPOINT ["java","-jar","/App-Crud-Navegacao-Total.jar"]
+FROM maven:3.8.4-jdk-11
+
+WORKDIR /usuario-app
+COPY . .
+COPY target/usuario-0.0.2-SNAPSHOT.jar usuario.jar
+ENTRYPOINT ["java","-jar","/usuario-app/usuario.jar"]

@@ -214,5 +214,4 @@
   	<servlet-name>FabricanteDeletar</servlet-name>
   	<url-pattern>/FabricanteDeletar</url-pattern>
   </servlet-mapping>
-   
 </web-app>
